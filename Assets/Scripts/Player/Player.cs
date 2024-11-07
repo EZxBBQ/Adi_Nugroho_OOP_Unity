@@ -38,5 +38,6 @@ public class Player : MonoBehaviour
     void LateUpdate() 
     {
         animator.SetBool("isMoving", playerMovement.IsMoving());
+        playerMovement.MoveBound();
     }
 }
