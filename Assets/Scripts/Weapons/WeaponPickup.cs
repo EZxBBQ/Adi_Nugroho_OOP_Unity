@@ -9,6 +9,7 @@ public class WeaponPickup : MonoBehaviour
     [SerializeField] private Weapon weaponHolder;
     private Weapon weapon;
     public static Weapon currentWeapon;
+    private Vector3 weaponOffset = new Vector3(0, 0.5f, 0);
 
     void Awake()
     {
@@ -41,44 +42,18 @@ public class WeaponPickup : MonoBehaviour
             currentWeapon = weapon;
             TurnVisual(true);
             weapon.transform.SetParent(other.transform, false);
-            weapon.transform.position = other.transform.position;
+            Vector3 newPosition = other.transform.position + weaponOffset;
+            newPosition.z = 2;
+            weapon.transform.position = newPosition;
         }
     }
 
     void TurnVisual(bool on)
     {
-        foreach(var component in weapon.GetComponents<Component>())
-        {
-            if (component is Renderer renderer)
-            {
-                renderer.enabled = on;
-            }
-            else if (component is Collider collider)
-            {
-                collider.enabled = on;
-            }
-            else if (component is Behaviour behaviour)
-            {
-                behaviour.enabled = on;
-            }
-        }
+        weapon.GameObject().SetActive(on);
     }
     void TurnVisual(bool on, Weapon weapon)
     {
-        foreach(var component in weapon.GetComponents<Component>())
-        {
-            if (component is Renderer renderer)
-            {
-                renderer.enabled = on;
-            }
-            else if (component is Collider collider)
-            {
-                collider.enabled = on;
-            }
-            else if (component is Behaviour behaviour)
-            {
-                behaviour.enabled = on;
-            }
-        }
+        weapon.GameObject().SetActive(on);
     }
 }
