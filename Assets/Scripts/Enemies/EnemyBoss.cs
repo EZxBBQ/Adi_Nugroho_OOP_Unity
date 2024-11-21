@@ -34,7 +34,7 @@ public class EnemyBoss : Enemy
         }
     }
 
-    public void SpawnEnemy()
+    public override void SpawnEnemy()
     {
         int isSpawnRight = Random.Range(0,2);
         float spawnX;

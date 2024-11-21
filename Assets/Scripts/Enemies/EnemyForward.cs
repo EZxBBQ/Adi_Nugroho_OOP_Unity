@@ -33,7 +33,7 @@ public class EnemyForward : Enemy
         }
     }
 
-    public void SpawnEnemy()
+    public override void SpawnEnemy()
     {
         int isSpawnAbove = Random.Range(0,2);
         float spawnY;

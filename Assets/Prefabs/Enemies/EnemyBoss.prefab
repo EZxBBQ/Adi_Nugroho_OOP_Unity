@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 3602292242923726185}
   - component: {fileID: 8367286678423337062}
   - component: {fileID: 2821811630767786331}
-  - component: {fileID: 4824457186521497264}
   - component: {fileID: 7728990990004275320}
   - component: {fileID: 2111347695767085184}
   - component: {fileID: 4090501595012791632}
@@ -153,18 +152,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4824457186521497264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6257142282283198643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 917feac2cc98e4c42b3f20e40ad990fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7728990990004275320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 090f70df5b5c19841af4906a057d8234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 3
   enemySpeed: 1
 --- !u!114 &2111347695767085184
 MonoBehaviour:
@@ -270,8 +258,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94bffb68302051f4eb685e078ab174ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnemyDeath:
+    m_PersistentCalls:
+      m_Calls: []
   health: 0
-  maxHealth: 1000
+  maxHealth: 100
 --- !u!114 &6249088040788021824
 MonoBehaviour:
   m_ObjectHideFlags: 0

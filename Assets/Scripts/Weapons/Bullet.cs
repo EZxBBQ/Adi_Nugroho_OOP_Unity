@@ -13,10 +13,8 @@ public class Bullet : MonoBehaviour
 
     private IObjectPool<Bullet> objectPool;
 
-    public IObjectPool<Bullet> ObjectPool {set => objectPool = value; }
+    public IObjectPool<Bullet> ObjectPool { set => objectPool = value; }
 
-
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,7 +29,15 @@ public class Bullet : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         rb.velocity = Vector2.zero;
-        objectPool.Release(this);
+
+        if (objectPool != null)
+        {
+            objectPool.Release(this);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -40,13 +46,19 @@ public class Bullet : MonoBehaviour
         {
             return;
         }
-        rb.velocity = Vector2.zero;    
-        objectPool.Release(this);
+        rb.velocity = Vector2.zero;
+        if (objectPool != null)
+        {
+            objectPool.Release(this);
+        }
     }
 
-    void OnBecameInvisible() {
+    void OnBecameInvisible()
+    {
         rb.velocity = Vector2.zero;
-        objectPool.Release(this);
+        if (objectPool != null)
+        {
+            objectPool.Release(this);
+        }
     }
-    
 }

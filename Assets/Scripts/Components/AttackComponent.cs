@@ -32,7 +32,6 @@ public class AttackComponent : MonoBehaviour
             hitbox.Damage(damage);
         }
 
-        Debug.Log("hit");
         InvincibilityComponent invincibility = other.GetComponent<InvincibilityComponent>();
         if (invincibility != null)
         {

@@ -373,8 +373,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94bffb68302051f4eb685e078ab174ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnemyDeath:
+    m_PersistentCalls:
+      m_Calls: []
   health: 0
-  maxHealth: 1000
+  maxHealth: 100
 --- !u!1 &8898894585590624734
 GameObject:
   m_ObjectHideFlags: 0

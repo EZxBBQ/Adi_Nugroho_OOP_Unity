@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1873200835325372987}
   - component: {fileID: 6677070697757124155}
   - component: {fileID: 2988934307957468556}
-  - component: {fileID: 6031383546644621650}
   - component: {fileID: 3925175180440938825}
   - component: {fileID: 7743737487047746157}
   - component: {fileID: 5735017643426153979}
@@ -119,18 +118,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6031383546644621650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6410122838814862494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 917feac2cc98e4c42b3f20e40ad990fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3925175180440938825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05721337d69553498e93fe42bcba799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 2
   enemySpeed: 1
 --- !u!58 &7743737487047746157
 CircleCollider2D:
@@ -219,8 +207,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94bffb68302051f4eb685e078ab174ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnemyDeath:
+    m_PersistentCalls:
+      m_Calls: []
   health: 0
-  maxHealth: 200
+  maxHealth: 20
 --- !u!114 &6290052330973712068
 MonoBehaviour:
   m_ObjectHideFlags: 0

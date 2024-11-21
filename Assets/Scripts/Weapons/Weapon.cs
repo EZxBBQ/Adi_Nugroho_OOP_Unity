@@ -9,16 +9,13 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float shootIntervalInSeconds;
     [SerializeField] private bool isPlayerWeapon;
 
-
     [Header("Bullets")]
     public Bullet bullet;
     [SerializeField] private Transform bulletSpawnPoint;
     private Vector3 bulletOffset = new Vector3(0, 0.6f, 0);
 
-
     [Header("Bullet Pool")]
     private IObjectPool<Bullet> objectPool;
-
 
     private readonly bool collectionCheck = false;
     private readonly int defaultCapacity = 20;
@@ -27,7 +24,7 @@ public class Weapon : MonoBehaviour
 
     public Transform parentTransform;
 
-    void Awake() 
+    void Awake()
     {
         objectPool = new ObjectPool<Bullet>(createBullet, onGetFromPool, onReleaseToPool, onDestroyPooledObject, collectionCheck, defaultCapacity, maxSize);
         if (this.gameObject.tag == "Enemy")
@@ -55,7 +52,7 @@ public class Weapon : MonoBehaviour
             bulletObject.gameObject.SetActive(true);
             Rigidbody2D bullet_rb = bulletObject.GetComponent<Rigidbody2D>();
 
-            if (isPlayerWeapon == true)
+            if (isPlayerWeapon)
             {
                 bullet_rb.velocity = bulletObject.transform.up * bulletObject.bulletSpeed;
             }
@@ -63,11 +60,9 @@ public class Weapon : MonoBehaviour
             {
                 bullet_rb.velocity = -bulletObject.transform.up * bulletObject.bulletSpeed;
             }
-            
 
             bulletObject.Deactivate();
         }
-        
     }
 
     private Bullet createBullet()
@@ -79,17 +74,25 @@ public class Weapon : MonoBehaviour
 
     private void onGetFromPool(Bullet pooledBullet)
     {
-        pooledBullet.gameObject.SetActive(true);
+        if (pooledBullet != null)
+        {
+            pooledBullet.gameObject.SetActive(true);
+        }
     }
 
     private void onReleaseToPool(Bullet pooledBullet)
     {
-        pooledBullet.gameObject.SetActive(false);
+        if (pooledBullet != null)
+        {
+            pooledBullet.gameObject.SetActive(false);
+        }
     }
 
     private void onDestroyPooledObject(Bullet pooledBullet)
     {
-        Destroy(pooledBullet.gameObject);
+        if (pooledBullet != null)
+        {
+            Destroy(pooledBullet.gameObject);
+        }
     }
-   
 }

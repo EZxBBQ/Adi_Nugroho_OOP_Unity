@@ -16,7 +16,6 @@ public class EnemyHorizontal : Enemy
         rb = GetComponent<Rigidbody2D>();
         screenHeight = 2 * Camera.main.orthographicSize;
         screenWidth = screenHeight * Camera.main.aspect;
-
         SpawnEnemy();
     }
 
@@ -33,7 +32,7 @@ public class EnemyHorizontal : Enemy
         }
     }
 
-    public void SpawnEnemy()
+    public override void SpawnEnemy()
     { 
         int isSpawnRight = Random.Range(0,2);
         float spawnX;

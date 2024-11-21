@@ -11,15 +11,16 @@ public class EnemyTargeting : Enemy
     private float screenHeight;
     private float screenWidth;
 
+    private HealthComponent healthComponent;
+
     // Start is called before the first frame update
     void Start()
     {
         player = Player.instance;
+        healthComponent = GetComponent<HealthComponent>();
 
         screenHeight = 2 * Camera.main.orthographicSize;
         screenWidth = screenHeight * Camera.main.aspect;
-
-        SpawnEnemy();
     }
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class EnemyTargeting : Enemy
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemySpeed * Time.deltaTime);
     }
 
-    public void SpawnEnemy()
+    public override void SpawnEnemy()
     {
         int isSpawnRight = Random.Range(0,2);
         float spawnX;
@@ -52,6 +53,7 @@ public class EnemyTargeting : Enemy
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            healthComponent.OnEnemyDeath.Invoke();
             Destroy(this.gameObject);
         }
     }
