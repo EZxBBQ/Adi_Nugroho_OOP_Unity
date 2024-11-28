@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement name="Container" style="flex-grow: 1; width: 506px;">
+            <ui:Label tabindex="-1" text="Health :" parse-escape-sequences="true" display-tooltip-when-elided="true" name="HealthLabel" style="width: 162px; height: 24px; color: rgb(255, 255, 255); font-size: 12px;">
+                <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlayerHealth" style="white-space: normal; -unity-text-align: lower-center; background-color: rgba(56, 56, 56, 0); width: 124px; height: 15px; font-size: 12px;" />
+            </ui:Label>
+            <ui:Label tabindex="-1" text="Point : " parse-escape-sequences="true" display-tooltip-when-elided="true" name="PointLabel" style="height: 24px; align-items: center; align-self: flex-start; width: 91px; flex-direction: row; justify-content: space-between; -unity-text-align: upper-left; color: rgb(255, 255, 255); font-size: 12px;">
+                <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PointAquired" style="-unity-text-align: middle-right; height: 16px; width: 72px; text-overflow: clip; white-space: nowrap; font-size: 12px;" />
+            </ui:Label>
+            <ui:Label tabindex="-1" text="Wave :" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WaveLabel" style="-unity-text-align: middle-left; height: 18px; width: 88px; white-space: nowrap; text-overflow: clip; color: rgb(255, 255, 255); translate: 550px -55px; font-size: 12px;">
+                <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WaveNumber" style="-unity-text-align: lower-right; height: 13px; width: 72px;" />
+            </ui:Label>
+            <ui:Label tabindex="-1" text="Enemies Left : " parse-escape-sequences="true" display-tooltip-when-elided="true" name="EnemiesLabel" style="width: 126px; height: 21px; -unity-text-align: middle-left; translate: 500px -50px; color: rgb(255, 255, 255); font-size: 12px;">
+                <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="EnemyAmount" style="-unity-text-align: lower-right; width: 118px; height: 15px; translate: -1px 0;" />
+            </ui:Label>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

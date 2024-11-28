@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Tittle.uss?fileID=7433441132597879392&amp;guid=89c50dfed9c595944a3f253a84edcf14&amp;type=3#Tittle" />
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement name="Container" style="flex-grow: 1; align-items: stretch; align-self: center; justify-content: space-between; width: 186px;">
+            <ui:Label tabindex="-1" text="Space Showdown" parse-escape-sequences="true" display-tooltip-when-elided="true" class="label" style="-unity-text-align: middle-center; height: 60px; text-overflow: clip; background-color: rgba(62, 62, 62, 0); color: rgb(255, 255, 255);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

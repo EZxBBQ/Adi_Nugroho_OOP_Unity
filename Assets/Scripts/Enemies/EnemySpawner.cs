@@ -10,8 +10,6 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private int minimumKillsToIncreaseSpawnCount = 3;
     public int totalKill = 0;
-    private int totalKillWave = 0;
-
 
     [SerializeField] private float spawnInterval = 3f;
 
@@ -24,6 +22,7 @@ public class EnemySpawner : MonoBehaviour
 
 
     public CombatManager combatManager;
+    private PointUI pointUI;
 
 
     public bool isSpawning = false;
@@ -33,6 +32,8 @@ public class EnemySpawner : MonoBehaviour
     {
         spawnCount = defaultSpawnCount;
         spawnCountTemp = spawnCount;
+
+        pointUI = GameObject.Find("UIDocument").GetComponent<PointUI>();
     }
 
     void FixedUpdate()
@@ -51,6 +52,7 @@ public class EnemySpawner : MonoBehaviour
     {
         totalKill++;
         combatManager.DecreaseTotalEnemies();
+        pointUI.AquirePoint(spawnedEnemy);
     }
 
     public void StartSpawning()

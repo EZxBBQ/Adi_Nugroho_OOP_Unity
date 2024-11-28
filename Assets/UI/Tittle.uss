@@ -1,0 +1,6 @@
+.label {
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    -unity-font: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=72ffbac6118c6ea43ab8a5efed4fcfb0&type=3#NotInter-Regular");
+    -unity-font-style: bold;
+}
